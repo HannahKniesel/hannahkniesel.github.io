@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Clean Implicit 3D Structure from Noisy 2D STEM Images">
+  <meta name="keywords" content="Implicit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clean Implicit 3D Structure from Noisy 2D STEM Images</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./script/fontawesome.all.min.js"></script>
+  <script src="./script/bulma-carousel.min.js"></script>
+  <script src="./script/bulma-slider.min.js"></script>
+  <script src="./script/index.js"></script>
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://hannahkniesel.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Clean Implicit 3D Structure from Noisy 2D STEM Images
+            <h3 class="title is-4 publication-title">CVPR 2022</h3>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://hannahkniesel.github.io/">Hannah Kniesel</a><sup>1 * </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><sup>1 </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              Tim Bergner<sup>1 </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              Kavitha Shaga Devan<sup>1 </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span><br>
+            <span class="author-block">
+              Clarissa Read<sup>1 </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              Paul Walther<sup>1 </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://phermosilla.github.io/">Pedro Hermosilla</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Ulm University</span>&nbsp;&nbsp;<br>
+            <span class="author-block"><sup>2</sup>University College London</span>&nbsp;&nbsp;
+          </div>
+          <br>
+          <!--<span class="link-block">
+            <a href="https://arxiv.org/abs/2309.15702" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <svg id="logomark" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 17.732 24.269"><style>svg{fill:#ffffff}</style><g id="tiny"><path d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/><path d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)" fill="#ffffff"/><path d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/></g></svg>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>-->
+          <span class="link-block">
+            <a href="media/clean_implicit/clean-implicit.pdf" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+            <span>Paper</span>
+            </a>
+        </span>
+        <!--<span class="link-block">
+          <a href="media/sgrec3d/wacv2024-1163.pdf" target="_blank"
+             class="button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-palette"></i>
+            </span>
+          <span>Poster</span>
+          </a>
+      </span>-->
+      <!--<span class="link-block">
+        <a href="https://youtu.be/YB4n_vi0RoE" target="_blank"
+           class="button is-normal is-rounded is-dark">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+        <span>Video</span>
+        </a>
+        </span>-->
+        <!--<span class="link-block">
+            <a href="https://x.com/sebastiankoch98/status/1707333107387359459?s=20" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+              </span>
+              <span>Twitter thread</span>
+            </a>
+          </span>-->
+          <!--<span class="link-block">
+            <a href="https://kochsebastian.com/auto3dsg" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><style>svg{fill:#ffffff}</style><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+              </span>
+            <span>Workshop paper</span>
+            </a>
+        </span>-->
+        <span class="link-block">
+          <a href="https://github.com/HannahKniesel/Implicit-Electron-Tomography" target="_blank"
+             class="button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+          <span>Code</span>
+          </a>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="media/wscd/teaser.gif" style="max-width:100%" /> <br> <br>
+      <h2 class="subtitle has-text-centered">
+        🔬🖥️✨ Our CVPR2022 paper unveils a method to extract pristine 3D structures from noisy 2D STEM images. 
+        Using a NeRF-inspired approach combined with a normalizing flow model, we untangle signal from noise for clean reconstructions from noisy projections. 
+        🌟🔍
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            STEM acquire 2D images of a 3D sample on the scale of individual cell components. Unfortunately, these 2D images can be too noisy to be fused into a useful 3D structure and facilitating good denoisers is challenging due to the lack of clean-noisy pairs. Additionally, representing detailed 3D structure can be difficult even for clean data when using regular 3D grids. Addressing these two limitations, we suggest a differentiable image formation model for STEM, allowing to learn a joint model of 2D sensor noise in STEM together with an implicit 3D model. We show, that the combination of these models outperforms both individually, as well as several baselines on synthetic and real data. We show, that the combination of these models are able to successfully disentangle 3D signal and noise without supervision and outperform at the same time several baselines on synthetic and real data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video 🎬</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/watch?v=brnf9B5ECPw" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+  <!-- Method Overview -->
+  <!--<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3"> <strong>Method</strong> Overview</h2>
+      <div class="content has-text-justified">
+        <img src="media/wscd/method.png" style="max-width:100%" />
+        We are introducing an iterative optimization process with shrinking receptive field to generate accurate bounding boxes for virus detection. 
+        In case of virus capsid detection, one can approximate the size of the bounding box from single instances, as the virus size does not vary. 
+        Additionally, the sizes are usually known and can hence be derived from literature. 
+        Our approach therefore needs to find the center of the virus capsid to be able to detect it. 
+        We hence train a classifier to predict the presence of virus capsids in the input image and reuse it during the optimization: 
+        For the <b>Initialization</b> of the particle position we compute a CAM obtained through GradCAM and place it at the position of the highest CAM value. 
+        During <b>Optimization</b> the position is iteratively refined, guided by the pre-trained classifier output and a Gaussian mask with decreasing standard deviation centered at the current position. 
+        A <b>Detection</b> is happening once the position converged to the exact position of the virus particle. 
+        Finally, the input image is prepared to detect the next virus by the <b>Virus Removal</b> of previously detected virus particles.
+        We check at multiple points of the virus detection pipeline, if a stopping criteria is met. 
+        The collected bounding boxes can be directly applied (Ours(Opt)) or further used to train an object detection model (Ours(OD)).
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">User Study</h2>
+        <div class="content has-text-justified">
+          <img src="media/wscd/userstudy.png" style="max-width:100%" />
+          Our user study reveals that using bounding boxes and location labels during annotation leads to additional workload and higher error rates, 
+          resulting in increased annotation time compared to image-level labels. Image-level labels are found to be less error-prone and allow for faster annotation.
+        </div>
+      </div>
+    </div>
+    </section>
+
+  <section class="section">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Limited Annotation Time</h2>
+      <div class="content has-text-justified">
+        <img src="media/wscd/limitedannotationtime.png" style="max-width:100%" />
+        We hence compare the performance of detecting virus capsids using bounding box labels, location labels and our approach using image level labels when the annotation time is fixed. 
+        We found that when the annotation time is limited, our approach is able to outperform location as well as ground truth labels. 
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison to State-Of-The-Art</h2>
+        <div class="content has-text-justified">
+          <img src="media/wscd/sota.png" style="max-width:100%" />
+          Most state-of-the-art weakly supervised approaches thrive on large dataset sizes with object centric nature. 
+          We hence found that all compared approaches were not able to outperform our approach for the detection of virus capsids in EM images.
+          We here compare against two adapted zero shot methods: SAM and CutLer, as well as multiple weakly supervised approaches. 
+          For a fair comparison we also include the virus size in the existing approaches.
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Robustness</h2>
+          <div class="content has-text-justified">
+            <img src="media/wscd/robustness.png" style="max-width:100%" />
+            Even though there is a clear bias visible towards the boarder of the virus (which is most 
+likely due to the imaging modality of negative stain TEM), our approach is able to converge to suitable
+positions of the virus based on the introduced optimization strategy. The GradCAM approach, which
+was applied to the same classifier, on the other hand, is not able to produce well fitting bounding
+boxes.
+          </div>
+        </div>
+      </div>
+      </section>
+
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <img src="media/wscd/sota_qualitative.png" style="max-width:100%" />
+          Qualitative results showing Ours(Opt) and other weakly supervised approaches. Note that other methods mainly fail when there are nore instances of the virus visible in the input image. 
+          Additionally, other approaches are prone to detect noise as virus particles.  
+          <img src="media/wscd/zero-shot-qualitative.png" style="max-width:100%" />
+          Qualitative results on the zero shot methods show that they fail to detect naked virus particles, that are not clearly separated from their surroundings. Additionally, other objects, that are similar in size as the virus are detected as capsids. 
+          This is due to the zero shot application of these methods. 
+          However, retraining the methods is not trivial, as SAM requires large datasets and annotations and CutLer relies on a large scale pretraining dataset which is not trivial to collect in the case of EM, as sample preparation and imageing is time and cost consuming.    
+        </div>
+      </div>
+    </div>
+    </section>-->
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{kniesel2020clean,
+          title={Clean Implicit 3D Structure from Noisy 2D STEM Images},
+          author={Kniesel, Hannah and Ropinski, Timo and Bergner, Tim and Shaga Devan, Kavitha and Read, Clarissa and Walther, Paul and Ritschel, Tobias and Hermosilla, Pedro},
+          booktitle={Proceedings of IEEE Conference on Computer Vision and Pattern Recognition}
+          year={2022}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                It borrows the source code of <a href="https://github.com/nerfies/nerfies.github.io">this website</a>.
+                We would like to thank Utkarsh Sinha and Keunhong Park.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
